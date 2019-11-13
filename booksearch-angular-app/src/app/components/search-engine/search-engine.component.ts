@@ -8,16 +8,22 @@ import { Component, OnInit, HostListener } from '@angular/core';
 export class SearchEngineComponent implements OnInit {
 
   private url = "https://www.googleapis.com/books/v1/volumes?q=";
-
+  private startIndex = 0;
 
   @HostListener("input", ["$event.target.value"])
   onInput(value) {
-    console.log(value);
+     
+    let searchInput = this.url + value;
+    let searchURL = this.url + value + `&maxResults=10&startIndex=${this.startIndex}`;
+    
+    
   }
 
   constructor() { }
 
   ngOnInit() {
-  }
 
+    
+  }
+  
 }
