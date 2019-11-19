@@ -9,6 +9,7 @@ import { DataService } from 'src/app/data.service';
   styleUrls: ['./search-engine.component.scss']
 })
 
+
 export class SearchEngineComponent implements OnInit, OnDestroy {
 
   inputUrl : string = "https://www.googleapis.com/books/v1/volumes?q=";
@@ -23,6 +24,7 @@ export class SearchEngineComponent implements OnInit, OnDestroy {
   onInput(value) {
     this.inputValue = value;
     this.inputURL = this.inputUrl + this.inputValue + `&maxResults=10&startIndex=${this.startIndex}`;
+
   }
 
   getData(){
@@ -30,7 +32,6 @@ export class SearchEngineComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-  }
 
   ngOnDestroy() {
     this.subData.unsubscribe();
