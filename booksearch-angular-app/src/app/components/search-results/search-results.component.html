@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="upper-part" *ngFor="let book of renderData">
+        <div>
+            <div class="title-and-author">
+                    <h2 class="book-title">{{book.volumeInfo.title}}</h2>
+                    <img src="{{book.volumeInfo.imageLinks.thumbnail}}"/>
+                    <p class="book-author">By {{book.volumeInfo.authors}}</p>
+            </div>
+        </div>
+        
+        <div class="lower-part">
+            {{book.volumeInfo.description}}
+        </div>
+    </div>
+</div>
